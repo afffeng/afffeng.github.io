@@ -1,0 +1,42 @@
+baseURL = 'https://liyanfeng.github.io/'
+languageCode = 'zh-CN'
+title = '李彦锋的个人主页'
+theme = 'PaperMod'
+
+[params]
+  defaultTheme = 'auto'
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+
+  [params.homeInfoParams]
+    Title = "你好，我是李彦锋 👋"
+    Content = "欢迎来到我的个人主页！这里记录着我的技术探索与生活感悟。"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/liyanfeng"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "projects"
+    name = "项目"
+    url = "/projects/"
+    weight = 20
+  [[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 30
+
+[outputs]
+  home = [ "HTML", "RSS", "JSON" ]
