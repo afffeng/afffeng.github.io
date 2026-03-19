@@ -1,7 +1,7 @@
 ---
 title: "tinyclaw"
 date: 2026-03-19
-draft: true
+draft: false
 description: "这是一个openclaw的迷你版"
 tags: ["openclaw"]
 ---

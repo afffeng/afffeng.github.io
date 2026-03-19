@@ -26,7 +26,7 @@ function stringifyFrontmatter(data, content) {
   let frontmatter = '---\n';
   frontmatter += `title: "${data.title || ''}"\n`;
   frontmatter += `date: ${data.date || formatDate(new Date())}\n`;
-  frontmatter += `draft: ${data.draft !== false}\n`;
+  frontmatter += `draft: ${data.draft === true}\n`;
   if (data.description) {
     frontmatter += `description: "${data.description}"\n`;
   }
