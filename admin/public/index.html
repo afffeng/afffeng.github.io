@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>博客管理后台</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <h1>📝 博客管理</h1>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item active" data-view="posts">
+          <span class="nav-icon">📄</span>
+          <span>文章管理</span>
+        </li>
+        <li class="nav-item" data-view="projects">
+          <span class="nav-icon">🚀</span>
+          <span>项目页面</span>
+        </li>
+        <li class="nav-item" data-view="about">
+          <span class="nav-icon">👤</span>
+          <span>关于页面</span>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <button id="hugo-preview" class="btn btn-secondary">预览 (hugo server)</button>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <div id="view-posts" class="view active">
+        <div class="view-header">
+          <h2>文章列表</h2>
+          <button id="new-post" class="btn btn-primary">+ 新建文章</button>
+        </div>
+        <div id="posts-list" class="posts-list"></div>
+      </div>
+
+      <div id="view-editor" class="view">
+        <div class="view-header">
+          <button id="back-btn" class="btn btn-secondary">← 返回</button>
+          <h2 id="editor-title">编辑文章</h2>
+          <div class="header-actions">
+            <button id="preview-toggle" class="btn btn-secondary">预览</button>
+            <button id="save-btn" class="btn btn-primary">保存</button>
+          </div>
+        </div>
+
+        <div class="editor-container">
+          <div class="editor-left">
+            <div class="form-group">
+              <label>标题</label>
+              <input type="text" id="post-title" class="form-input" placeholder="输入文章标题">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>日期</label>
+                <input type="date" id="post-date" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="post-draft">
+                  <span>草稿</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>描述</label>
+              <input type="text" id="post-description" class="form-input" placeholder="简短描述">
+            </div>
+
+            <div class="form-group">
+              <label>标签 (逗号分隔)</label>
+              <input type="text" id="post-tags" class="form-input" placeholder="标签1, 标签2, 标签3">
+            </div>
+
+            <div class="form-group">
+              <label>内容 (Markdown)</label>
+              <textarea id="post-content" class="form-textarea" placeholder="在这里写你的文章内容..."></textarea>
+            </div>
+          </div>
+
+          <div class="editor-right" id="preview-panel">
+            <div class="preview-header">预览</div>
+            <div id="preview-content" class="preview-content"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="view-projects" class="view">
+        <div class="view-header">
+          <h2>项目页面</h2>
+          <button id="save-projects" class="btn btn-primary">保存</button>
+        </div>
+        <div class="editor-container">
+          <div class="editor-left">
+            <div class="form-group">
+              <label>标题</label>
+              <input type="text" id="projects-title" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>内容 (Markdown)</label>
+              <textarea id="projects-content" class="form-textarea"></textarea>
+            </div>
+          </div>
+          <div class="editor-right">
+            <div class="preview-header">预览</div>
+            <div id="projects-preview" class="preview-content"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="view-about" class="view">
+        <div class="view-header">
+          <h2>关于页面</h2>
+          <button id="save-about" class="btn btn-primary">保存</button>
+        </div>
+        <div class="editor-container">
+          <div class="editor-left">
+            <div class="form-group">
+              <label>标题</label>
+              <input type="text" id="about-title" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>内容 (Markdown)</label>
+              <textarea id="about-content" class="form-textarea"></textarea>
+            </div>
+          </div>
+          <div class="editor-right">
+            <div class="preview-header">预览</div>
+            <div id="about-preview" class="preview-content"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <div id="confirm-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>确认删除</h3>
+      <p id="confirm-message">确定要删除这篇文章吗？</p>
+      <div class="modal-actions">
+        <button id="confirm-cancel" class="btn btn-secondary">取消</button>
+        <button id="confirm-ok" class="btn btn-danger">删除</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

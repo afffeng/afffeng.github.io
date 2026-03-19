@@ -1,0 +1,17 @@
+{
+  "name": "hugo-blog-admin",
+  "version": "1.0.0",
+  "description": "图形化管理后台 for Hugo 博客",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "front-matter": "^4.0.2",
+    "cors": "^2.8.5"
+  },
+  "keywords": ["hugo", "admin", "blog"],
+  "author": "",
+  "license": "MIT"
+}

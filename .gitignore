@@ -1,2 +1,4 @@
-public/
+/public/
 .hugo_build.lock
+admin/node_modules/
+.DS_Store
