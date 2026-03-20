@@ -19,7 +19,7 @@ theme = 'PaperMod'
 
   [[params.socialIcons]]
     name = "github"
-    url = "https://github.com/liyanfeng"
+    url = "https://github.com/afffeng"
 
 [menu]
   [[menu.main]]
